@@ -3,522 +3,779 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portofolio profesional Ahmad Wibu - Desktop & Web Developer">
-  <title>Ahmad Wibu | Desktop & Web Developer</title>
+  <meta name="description" content="Portofolio profesional Akhmad Khoirudin - Desktop & Web Developer">
+  <title>Akhmad Khoirudin | Desktop & Web Developer</title>
   <link rel="icon" type="image/png" href="logo.png">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
-  <!-- Favicon -->
-  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>"> -->
-
+  <!-- Custom CSS -->
   <style>
-   :root {
-  --primary-color: #0d6efd;
-  --secondary-color: #6610f2;
-  --dark-bg: #121212;
-  --dark-card: #1e1e1e;
-  --dark-text: #f1f1f1;
-  --hero-bg-light: linear-gradient(135deg, #0d6efd, #6610f2);
-  --hero-bg-dark: linear-gradient(135deg, #1a1a2e, #16213e);
-}
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-  opacity: 0;
-}
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #7c3aed;
+      --accent-color: #06b6d4;
+      --dark-bg: #0f172a;
+      --dark-card: #1e293b;
+      --light-bg: #f8fafc;
+      --text-light: #64748b;
+      --text-dark: #1e293b;
+    }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Segoe UI', 'Poppins', sans-serif;
-  transition: background 0.5s ease, color 0.5s ease;
-  scroll-behavior: smooth;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--light-bg);
+      transition: all 0.3s ease;
+      overflow-x: hidden;
+    }
 
-/* Dark mode styles */
-body.dark-mode {
-  color: var(--dark-text);
-  background-color: var(--dark-bg);
-}
+    body.dark-mode {
+      color: #e2e8f0;
+      background-color: var(--dark-bg);
+    }
 
-body.dark-mode .hero {
-  background: var(--hero-bg-dark) !important;
-}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
 
-body.dark-mode .btn-outline-light {
-  color: #f8f9fa;
-  border-color: #f8f9fa;
-}
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 3rem;
+      font-weight: 700;
+    }
 
-body.dark-mode .btn-outline-light:hover {
-  background-color: #f8f9fa;
-  color: #121212;
-}
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
 
-body.dark-mode .card {
-  background-color: var(--dark-card);
-  color: var(--dark-text);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
-}
+    .section-title.dark-mode::after {
+      background: linear-gradient(90deg, var(--accent-color), #8b5cf6);
+    }
 
-body.dark-mode section {
-  background-color: var(--dark-bg);
-}
+    /* Navbar Styling */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
 
-body.dark-mode .bg-light {
-  background-color: #1a1a1a !important;
-}
+    body.dark-mode .navbar {
+      background: rgba(15, 23, 42, 0.95) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
 
-body.dark-mode .navbar,
-body.dark-mode footer {
-  background: linear-gradient(135deg, #222, #111) !important;
-}
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
 
-body.dark-mode .form-control {
-  background-color: var(--dark-card);
-  color: var(--dark-text);
-  border-color: #333;
-}
+    .nav-link {
+      font-weight: 500;
+      margin: 0 0.5rem;
+      color: var(--text-dark) !important;
+      position: relative;
+    }
 
-body.dark-mode .skill-card {
-  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
-}
+    body.dark-mode .nav-link {
+      color: #e2e8f0 !important;
+    }
 
-/* Text colors in dark mode */
-body.dark-mode .text-muted {
-  color: #b0b0b0 !important;
-}
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
 
-body.dark-mode .card-text,
-body.dark-mode .card-title,
-body.dark-mode .form-label,
-body.dark-mode .badge {
-  color: var(--dark-text);
-}
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
-body.dark-mode .social-icon {
-  background: rgba(255, 255, 255, 0.1);
-}
+    /* Dark Mode Switch */
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+    }
 
-body.dark-mode .social-icon:hover {
-  background: var(--primary-color);
-}
+    .form-check-input {
+      width: 48px;
+      height: 24px;
+      cursor: pointer;
+      border: 2px solid var(--primary-color);
+    }
 
-body.dark-mode .card *:not(.btn):not(.badge) {
-  color: var(--dark-text);
-}
+    .form-check-input:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
 
-body.dark-mode .progress strong {
-  color: var(--dark-text);
-}
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Hero section */
-.hero {
-  background: var(--hero-bg-light);
-  color: white;
-  padding: 120px 0 100px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
+    body.dark-mode .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-  opacity: 0.3;
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-position: bottom;
+    }
 
-/* Other existing styles... */
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
 
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  border-radius: 10px;
-  height: 100%;
-}
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
 
-.skill-card {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  border-left: 4px solid var(--primary-color);
-}
-.project-card img.card-img-top {
-  width: 100%;
-  height: 200px; /* Atur sesuai kebutuhan */
-  object-fit: cover;
-}
+    .hero .lead {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
 
+    /* Buttons */
+    .btn {
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Rest of your existing styles... */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-outline-light {
+      border: 2px solid white;
+      background: transparent;
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--primary-color) !important;
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: white;
+      height: 100%;
+    }
+
+    body.dark-mode .card {
+      background: var(--dark-card);
+      color: #e2e8f0;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    body.dark-mode .card:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .certification-card {
+      border-top: 4px solid;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .certification-card i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+      height: 100%;
+    }
+
+    .project-card .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    /* Skills Section */
+    .skill-item {
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark-mode .skill-item {
+      background: var(--dark-card);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+    }
+
+    body.dark-mode .progress {
+      background: #334155;
+    }
+
+    .progress-bar {
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+
+    /* Contact Form */
+    .form-control {
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    body.dark-mode .form-control {
+      background: var(--dark-card);
+      border-color: #334155;
+      color: #e2e8f0;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* Social Icons */
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .social-icon {
+      background: var(--dark-card);
+      color: #e2e8f0;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      color: white;
+    }
+
+    .social-icon.github:hover { background: #333; }
+    .social-icon.linkedin:hover { background: #0077b5; }
+    .social-icon.instagram:hover { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+    .social-icon.twitter:hover { background: #1da1f2; }
+    .social-icon.facebook:hover { background: #1877f2; }
+    .social-icon.email:hover { background: var(--primary-color); }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      padding: 3rem 0;
+    }
+
+    footer h5 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    footer p {
+      color: #94a3b8;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--secondary-color);
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .lead {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      body.dark-mode .navbar-collapse {
+        background: var(--dark-card);
+      }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Badges */
+    .badge {
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 500;
+      margin: 0.25rem;
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   </style>
-  <style>
-  /* Custom Colors */
-  .text-google { color: #4285F4; }
-  .text-microsoft { color: #6f42c1; }
-  .text-cisco { color: #1ba0d7; }
-  
-  .btn-outline-google {
-    color: #4285F4;
-    border-color: #4285F4;
-  }
-  .btn-outline-microsoft {
-    color: #6f42c1;
-    border-color: #6f42c1;
-  }
-  .btn-outline-cisco {
-    color: #1ba0d7;
-    border-color: #1ba0d7;
-  }
-  
-  .btn-outline-google:hover {
-    background-color: #4285F4;
-    color: white;
-  }
-  .btn-outline-microsoft:hover {
-    background-color: #6f42c1;
-    color: white;
-  }
-  .btn-outline-cisco:hover {
-    background-color: #1ba0d7;
-    color: white;
-  }
-
-  /* Dark Mode Adaptation */
-  body.dark-mode .card {
-    border-top-width: 3px !important;
-  }
-  body.dark-mode .btn-outline-google:hover,
-  body.dark-mode .btn-outline-microsoft:hover,
-  body.dark-mode .btn-outline-cisco:hover {
-    color: var(--dark-text) !important;
-  }
-</style>
-
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary sticky-top">
-    <div class="container">
-      <a class="navbar-brand text-white fw-bold" href="#"><i class="bi bi-code-slash me-2"></i>Akhmad Khoirudin</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon text-white"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto me-3">
-          <li class="nav-item"><a class="nav-link text-white" href="#about">Tentang</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#skills">Keahlian</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#projects">Proyek</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#contact">Kontak</a></li>
-        </ul>
-        <!-- Dark mode toggle -->
-        <div class="form-check form-switch toggle-switch">
-          <input class="form-check-input" type="checkbox" id="darkModeSwitch">
-          <label class="form-check-label" for="darkModeSwitch"><i class="bi bi-moon-fill"></i></label>
-        </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-code-slash me-2"></i>Akhmad Khoirudin
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">Tentang</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certifications">Sertifikasi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Proyek</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Kontak</a>
+        </li>
+      </ul>
+      <div class="form-check form-switch toggle-switch ms-3">
+        <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+        <label class="form-check-label" for="darkModeSwitch">
+          <i class="bi bi-moon-fill"></i>
+        </label>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container hero-content">
-    <img src="https://avatars.githubusercontent.com/u/99156436?v=4" alt="Profile Ahmad Wibu" class="profile-img fade-in">
-    <h1 class="display-4 fw-bold mb-3">Akhmad Khoirudin</h1>
-    <p class="lead mb-4">Programmer Desktop & Web Developer</p>
-    <p class="mb-4">Mengembangkan solusi desktop & web yang efektif, handal, dan profesional.</p>
-    <div>
-      <a href="#projects" class="btn btn-primary me-2">Lihat Proyek</a>
-      <a href="#contact" class="btn btn-outline-light">Hubungi Saya</a>
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h1>Akhmad Khoirudin</h1>
+        <p class="lead">Desktop & Web Developer</p>
+        <p class="mb-4">Mengembangkan solusi digital yang inovatif, efisien, dan berdampak tinggi untuk kebutuhan bisnis modern.</p>
+        <div class="d-flex gap-3">
+          <a href="#projects" class="btn btn-primary">
+            <i class="bi bi-eye me-2"></i>Lihat Proyek
+          </a>
+          <a href="#contact" class="btn btn-outline-light">
+            <i class="bi bi-chat-dots me-2"></i>Hubungi Saya
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <div class="position-relative">
+          <img src="https://avatars.githubusercontent.com/u/99156436?v=4" alt="Akhmad Khoirudin" class="profile-img">
+          <div class="mt-4">
+            <div class="d-flex justify-content-center gap-3">
+              <span class="badge bg-light text-dark">.NET</span>
+              <span class="badge bg-light text-dark">Web Dev</span>
+              <span class="badge bg-light text-dark">Full Stack</span>
+              <span class="badge bg-light text-dark">Database</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- About -->
+<!-- About Section -->
 <section id="about" class="py-5">
   <div class="container">
-    <h2 class="text-center section-title" data-aos="fade-up">Tentang Saya</h2>
+    <h2 class="section-title text-center mb-5" data-aos="fade-up">Tentang Saya</h2>
     <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=180&w=300" alt="Coding Illustration" class="img-fluid rounded shadow">
+      <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+        <div class="card p-4">
+          <h4 class="mb-3">Profil Profesional</h4>
+          <p class="mb-3">Saya adalah seorang pengembang perangkat lunak berpengalaman dengan fokus pada pengembangan aplikasi desktop menggunakan .NET Framework dan aplikasi web menggunakan teknologi modern.</p>
+          <p class="mb-4">Dengan pengalaman lebih dari 3 tahun, saya telah mengembangkan berbagai solusi untuk klien dari berbagai industri, mulai dari sistem kasir untuk UMKM hingga aplikasi enterprise untuk perusahaan besar.</p>
+          
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <h6><i class="bi bi-check-circle-fill text-success me-2"></i>Pengembangan Desktop</h6>
+              <p class="small text-muted">VB.NET, C#, .NET Framework</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h6><i class="bi bi-check-circle-fill text-success me-2"></i>Pengembangan Web</h6>
+              <p class="small text-muted">PHP, JavaScript, Bootstrap</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h6><i class="bi bi-check-circle-fill text-success me-2"></i>Database</h6>
+              <p class="small text-muted">MySQL, SQL Server</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h6><i class="bi bi-check-circle-fill text-success me-2"></i>Tools</h6>
+              <p class="small text-muted">Git, VS Code, Visual Studio</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
-        <p class="lead">Halo! Saya Akhmad Khoirudin, seorang pengembang perangkat lunak dengan fokus pada pengembangan aplikasi desktop dan web.</p>
-        <p>Saya memiliki pengalaman lebih dari 3 tahun dalam membangun aplikasi desktop menggunakan VB.NET dan sistem web menggunakan teknologi modern seperti HTML, CSS, JavaScript, dan PHP.</p>
-        <p>Selain coding, saya juga menikmati mempelajari teknologi baru, berkolaborasi dalam tim, dan memecahkan masalah kompleks dengan solusi yang elegan.</p>
-        <div class="d-flex flex-wrap gap-2 mt-4">
-          <span class="badge bg-primary">VB.NET</span>
-          <span class="badge bg-secondary">C#</span>
-          <span class="badge bg-success">PHP</span>
-          <span class="badge bg-danger">JavaScript</span>
-          <span class="badge bg-warning text-dark">HTML/CSS</span>
-          <span class="badge bg-info">MySQL</span>
-          <span class="badge bg-dark">Git</span>
+        <div class="card p-4">
+          <h4 class="mb-4">Keahlian Teknis</h4>
+          
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>.NET Development</span>
+              <span>95%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>PHP & MySQL</span>
+              <span>90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span>
+              <span>85%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>HTML/CSS</span>
+              <span>95%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Bootstrap</span>
+              <span>94%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 94%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Git & Version Control</span>
+              <span>87%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 87%"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Certifications -->
-<section id="skills" class="py-5">
+<!-- Certifications Section -->
+<section id="certifications" class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center section-title" data-aos="fade-up">Sertifikasi</h2>
+    <h2 class="section-title text-center mb-5" data-aos="fade-up">Sertifikasi</h2>
     <div class="row g-4">
-      <!-- Google Analytics -->
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card shadow-sm h-100" style="border-top: 3px solid #4285F4;">
-          <div class="card-body text-center">
-            <i class="bi bi-google fs-1 text-google mb-3"></i>
-            <h5>Google Analytics Certified</h5>
-            <p class="text-muted">February 14, 2024</p>
-            <div class="d-grid gap-2">
-              <a href="https://www.credly.com/badges/4a398a47-b678-4ff8-b699-2f6356d15046/public_url" class="btn btn-sm btn-outline-google">
-                <i class="bi bi-patch-check"></i> Lihat Credential
-              </a>
-            </div>
-          </div>
+        <div class="card certification-card" style="border-top-color: #4285F4;">
+          <i class="bi bi-google text-google"></i>
+          <h5 class="mb-2">Google Analytics Certified</h5>
+          <p class="text-muted mb-3">14 Februari 2024</p>
+          <p class="mb-3">Sertifikasi profesional dalam analisis data dan pengukuran performa digital.</p>
+          <a href="https://www.credly.com/badges/4a398a47-b678-4ff8-b699-2f6356d15046/public_url" 
+             target="_blank" class="btn btn-outline-google">
+            <i class="bi bi-patch-check me-2"></i>Lihat Credential
+          </a>
         </div>
       </div>
-
-      <!-- Microsoft Event -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card shadow-sm h-100" style="border-top: 3px solid #6f42c1;">
-          <div class="card-body text-center">
-            <i class="bi bi-microsoft fs-1 text-microsoft mb-3"></i>
-            <h5>Microsoft Event Specialist</h5>
-            <p class="text-muted">April 11, 2025.</p>
-            <div class="d-grid gap-2">
-              <a href="https://learn.microsoft.com/api/achievements/share/en-us/akhmadkhoirudin/FM7YN4AX?sharingId=C0CD27674A7DFABF" class="btn btn-sm btn-outline-microsoft">
-                <i class="bi bi-patch-check"></i> Lihat Credential
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cisco Ethical Hacker -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card shadow-sm h-100" style="border-top: 3px solid #1ba0d7;">
-          <div class="card-body text-center">
-            <i class="bi bi-shield-lock fs-1 text-cisco mb-3"></i>
-            <h5>Certified Ethical Hacker</h5>
-            <p class="text-muted">October 14, 2024</p>
-            <div class="d-grid gap-2">
-              <a href="https://www.credly.com/badges/0eb30abe-306c-4880-bf75-805d5e60affa/public_url" class="btn btn-sm btn-outline-cisco">
-                <i class="bi bi-patch-check"></i> Lihat Credential
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card certification-card" style="border-top-color: #6f42c1;">
+          <i class="bi bi-microsoft text-microsoft"></i>
+          <h5 class="mb-2">Microsoft Event Specialist</h5>
+          <p class="text-muted mb-3">11 April 2025</p>
+          <p class="mb-3">Spesialis dalam teknologi Microsoft dan solusi enterprise.</p>
+          <a href="https://learn.microsoft.com/api/achievements/share/en-us/akhmadkhoirudin/FM7YN4AX?sharingId=C0CD27674A7DFABF" 
+             target="_blank" class="btn btn-outline-microsoft">
+            <i class="bi bi-patch-check me-2"></i>Lihat Credential
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card certification-card" style="border-top-color: #1ba0d7;">
+          <i class="bi bi-shield-lock text-cisco"></i>
+          <h5 class="mb-2">Certified Ethical Hacker</h5>
+          <p class="text-muted mb-3">14 Oktober 2024</p>
+          <p class="mb-3">Keahlian dalam keamanan siber dan pengujian penetrasi.</p>
+          <a href="https://www.credly.com/badges/0eb30abe-306c-4880-bf75-805d5e60affa/public_url" 
+             target="_blank" class="btn btn-outline-cisco">
+            <i class="bi bi-patch-check me-2"></i>Lihat Credential
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-
-<!-- Skills -->
-<!-- <section id="skills" class="py-5 bg-light">
+<!-- Projects Section -->
+<section id="projects" class="py-5">
   <div class="container">
-    <h2 class="text-center section-title" data-aos="fade-up">Keahlian</h2>
+    <h2 class="section-title text-center mb-5" data-aos="fade-up">Proyek Terbaru</h2>
     <div class="row g-4">
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card p-4 shadow-sm skill-card h-100">
-          <div class="text-center mb-3">
-            <i class="bi bi-windows fs-1 text-primary"></i>
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000" class="card-img-top" alt="Sistem Kasir">
+          <div class="card-body">
+            <h5 class="card-title">Sistem Kasir VB.NET</h5>
+            <p class="card-text text-muted mb-3">Aplikasi desktop untuk toko dan UMKM dengan fitur transaksi, laporan, dan manajemen inventori.</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-primary">VB.NET</span>
+              <span class="badge bg-primary">MySQL</span>
+              <span class="badge bg-primary">Crystal Report</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-sm btn-primary">Detail Proyek</a>
+              <small class="text-muted">2024</small>
+            </div>
           </div>
-          <h4 class="text-center mb-3">.NET Development</h4>
-          <p class="text-center">Pengembangan aplikasi desktop menggunakan VB.NET dan C# dengan framework .NET</p>
         </div>
       </div>
+      
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card p-4 shadow-sm skill-card h-100">
-          <div class="text-center mb-3">
-            <i class="bi bi-globe fs-1 text-primary"></i>
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" class="card-img-top" alt="SI Koperasi">
+          <div class="card-body">
+            <h5 class="card-title">SI Koperasi</h5>
+            <p class="card-text text-muted mb-3">Sistem simpan pinjam berbasis web dengan PHP dan MySQL untuk koperasi dan UMKM.</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-primary">PHP</span>
+              <span class="badge bg-primary">MySQL</span>
+              <span class="badge bg-primary">Bootstrap</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-sm btn-primary">Detail Proyek</a>
+              <small class="text-muted">2023</small>
+            </div>
           </div>
-          <h4 class="text-center mb-3">Web Development</h4>
-          <p class="text-center">Membangun website dan aplikasi web menggunakan HTML, CSS, JavaScript, dan PHP</p>
         </div>
       </div>
+      
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card p-4 shadow-sm skill-card h-100">
-          <div class="text-center mb-3">
-            <i class="bi bi-database fs-1 text-primary"></i>
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000" class="card-img-top" alt="Landing Page">
+          <div class="card-body">
+            <h5 class="card-title">Landing Page Produk</h5>
+            <p class="card-text text-muted mb-3">Situs satu halaman responsif untuk promosi produk dengan animasi modern.</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-primary">HTML/CSS</span>
+              <span class="badge bg-primary">JavaScript</span>
+              <span class="badge bg-primary">Bootstrap</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-sm btn-primary">Detail Proyek</a>
+              <small class="text-muted">2024</small>
+            </div>
           </div>
-          <h4 class="text-center mb-3">Database</h4>
-          <p class="text-center">Desain dan implementasi database menggunakan MySQL dan SQL Server</p>
         </div>
       </div>
     </div>
     
-    <div class="mt-5" data-aos="fade-up">
-      <h4 class="text-center mb-4">Teknologi yang Saya Kuasai</h4>
-      <div class="row g-3">
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>.NET (Desktop)</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-success" style="width: 95%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>HTML/CSS</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-info" style="width: 90%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>JavaScript</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-warning" style="width: 85%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>PHP</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-primary" style="width: 88%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>MySQL</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-danger" style="width: 92%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>Bootstrap</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-purple" style="width: 94%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>Git</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-dark" style="width: 87%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="card p-3 text-center shadow-sm">
-            <strong>REST API</strong>
-            <div class="progress mt-2">
-              <div class="progress-bar bg-secondary" style="width: 80%"></div>
-            </div>
-          </div>
-        </div> 
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- Projects -->
-<section id="projects" class="py-5">
-  <div class="container">
-    <h2 class="text-center section-title" data-aos="fade-up">Proyek Terbaru</h2>
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card project-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000" class="card-img-top" alt="Sistem Kasir">
-          <div class="card-body">
-            <h5 class="card-title">Sistem Kasir VB.NET</h5>
-            <p class="card-text">Aplikasi desktop untuk toko dan UMKM dengan fitur transaksi, laporan, dan manajemen inventori.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <a href="#" class="btn btn-sm btn-outline-primary">Detail Proyek</a>
-              <small class="text-muted">2024</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card project-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" class="card-img-top" alt="SI Koperasi">
-          <div class="card-body">
-            <h5 class="card-title">SI Koperasi</h5>
-            <p class="card-text">Sistem simpan pinjam berbasis web dengan PHP dan MySQL untuk koperasi dan UMKM.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <a href="#" class="btn btn-sm btn-outline-primary">Detail Proyek</a>
-              <small class="text-muted">2023</small>
-            </div>
-          </div>
-        </div> 
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card project-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000" class="card-img-top" alt="Landing Page">
-          <div class="card-body">
-            <h5 class="card-title">Landing Page Produk</h5>
-            <p class="card-text">Situs satu halaman responsif untuk promosi produk dengan animasi modern.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <a href="#" class="btn btn-sm btn-outline-primary">Detail Proyek</a>
-              <small class="text-muted">2024</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="text-center mt-5" data-aos="fade-up">
-      <a href="#" class="btn btn-primary">Lihat Semua Proyek</a>
+      <a href="#" class="btn btn-primary px-4">
+        <i class="bi bi-grid-3x3-gap me-2"></i>Lihat Semua Proyek
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
+<!-- Contact Section -->
 <section id="contact" class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center section-title" data-aos="fade-up">Hubungi Saya</h2>
+    <h2 class="section-title text-center mb-5" data-aos="fade-up">Hubungi Saya</h2>
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="card shadow-sm" data-aos="fade-up">
-          <div class="card-body p-5">
-            <form>
+          <div class="card-body p-4">
+            <form id="contactForm">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="name" class="form-label">Nama Lengkap</label>
@@ -538,36 +795,38 @@ body.dark-mode .progress strong {
                 <textarea class="form-control" id="message" rows="5" required></textarea>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary px-4">Kirim Pesan</button>
+                <button type="submit" class="btn btn-primary px-4">
+                  <i class="bi bi-send me-2"></i>Kirim Pesan
+                </button>
               </div>
             </form>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Sosial Media -->
-    <div class="text-center mt-5" data-aos="fade-up">
-      <h5 class="mb-4">Atau temui saya di:</h5>
-      <div class="d-flex justify-content-center gap-3 flex-wrap">
-        <a href="https://github.com/AkhmadKhoirudin/" target="_blank" rel="noopener noreferrer" class="social-icon text-dark">
-          <i class="bi bi-github fs-5"></i>
-        </a>
-        <a href="https://linkedin.com/in/akhmadwibu05" target="_blank" rel="noopener noreferrer" class="social-icon text-primary">
-          <i class="bi bi-linkedin fs-5"></i>
-        </a>
-        <a href="https://www.instagram.com/akhmadkhoirudin0510/" target="_blank" rel="noopener noreferrer" class="social-icon text-danger">
-          <i class="bi bi-instagram fs-5"></i>
-        </a>
-        <a href="https://x.com/akhmadwibu05" target="_blank" rel="noopener noreferrer" class="social-icon text-info">
-          <i class="bi bi-twitter fs-5"></i>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=100071587369861" target="_blank" rel="noopener noreferrer" class="social-icon text-primary">
-          <i class="bi bi-facebook fs-5"></i>
-        </a>
-        <a href="mailto:akhmadwibu05@outlook.com" class="social-icon text-secondary">
-          <i class="bi bi-envelope fs-5"></i>
-        </a>        
+        
+        <!-- Social Media -->
+        <div class="text-center mt-5" data-aos="fade-up">
+          <h5 class="mb-4">Atau hubungi melalui:</h5>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="https://github.com/AkhmadKhoirudin/" target="_blank" class="social-icon github">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/akhmadwibu05" target="_blank" class="social-icon linkedin">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/akhmadkhoirudin0510/" target="_blank" class="social-icon instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://x.com/akhmadwibu05" target="_blank" class="social-icon twitter">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100071587369861" target="_blank" class="social-icon facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="mailto:akhmadwibu05@outlook.com" class="social-icon email">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -577,25 +836,33 @@ body.dark-mode .progress strong {
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
-        <h5>Akhmad Khoirudin</h5>
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h5 class="mb-3">Akhmad Khoirudin</h5>
         <p>Desktop & Web Developer</p>
+        <p class="mb-0">Mengembangkan solusi digital yang inovatif untuk kebutuhan bisnis modern.</p>
       </div>
-      <div class="col-md-6 text-md-end text-center">
-        <p class="mb-1">
-          <i class="bi bi-geo-alt me-2"></i>cirebon, Jawa barat, Indonesia
+      <div class="col-md-6 text-md-end">
+        <p class="mb-2">
+          <i class="bi bi-geo-alt me-2"></i>Cirebon, Jawa Barat, Indonesia
         </p>
         <p class="mb-0">
           <i class="bi bi-envelope me-2"></i>akhmadwibu05@outlook.com
         </p>
       </div>
     </div>
-    <hr class="my-4 opacity-10">
-    <p class="mb-0">&copy; 2025 Akhmad Khoirudin. All rights reserved.</p>
+    <hr class="my-4 opacity-25">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">&copy; 2025 Akhmad Khoirudin. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-0">Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> menggunakan Bootstrap & CSS</p>
+      </div>
+    </div>
   </div>
 </footer>
 
-<!-- Back to top button -->
+<!-- Back to Top Button -->
 <a href="#" class="back-to-top">
   <i class="bi bi-arrow-up"></i>
 </a>
@@ -608,7 +875,8 @@ body.dark-mode .progress strong {
   AOS.init({
     duration: 800,
     easing: 'ease-in-out',
-    once: true
+    once: true,
+    offset: 100
   });
 
   // Dark mode toggle
@@ -619,15 +887,24 @@ body.dark-mode .progress strong {
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
     toggle.checked = true;
+    document.querySelectorAll('.section-title').forEach(title => {
+      title.classList.add('dark-mode');
+    });
   }
 
   toggle.addEventListener('change', () => {
     if (toggle.checked) {
       body.classList.add('dark-mode');
       localStorage.setItem('theme', 'dark');
+      document.querySelectorAll('.section-title').forEach(title => {
+        title.classList.add('dark-mode');
+      });
     } else {
       body.classList.remove('dark-mode');
       localStorage.setItem('theme', 'light');
+      document.querySelectorAll('.section-title').forEach(title => {
+        title.classList.remove('dark-mode');
+      });
     }
   });
 
@@ -653,20 +930,99 @@ body.dark-mode .progress strong {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 70,
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
+        
+        // Close mobile navbar
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          navbarCollapse.classList.remove('show');
+        }
       }
     });
   });
 
   // Form submission
-  const contactForm = document.querySelector('form');
+  const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Simple validation
+      if (!name || !email || !subject || !message) {
+        alert('Harap lengkapi semua field!');
+        return;
+      }
+      
+      // Show success message
+      const alertDiv = document.createElement('div');
+      alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
+      alertDiv.innerHTML = `
+        <strong>Terima kasih!</strong> Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      `;
+      
+      const cardBody = document.querySelector('.card-body');
+      cardBody.appendChild(alertDiv);
+      
+      // Reset form
       this.reset();
+      
+      // Auto dismiss alert
+      setTimeout(() => {
+        alertDiv.classList.remove('show');
+        setTimeout(() => alertDiv.remove(), 150);
+      }, 5000);
+    });
+  }
+
+  // Add active class to navbar links on scroll
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= (sectionTop - 100)) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Add typing animation effect to hero
+  const heroTitle = document.querySelector('.hero h1');
+  if (heroTitle) {
+    const originalText = heroTitle.textContent;
+    heroTitle.textContent = '';
+    
+    let i = 0;
+    const typeWriter = () => {
+      if (i < originalText.length) {
+        heroTitle.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    };
+    
+    // Start animation after page loads
+    window.addEventListener('load', () => {
+      setTimeout(typeWriter, 500);
     });
   }
 </script>
